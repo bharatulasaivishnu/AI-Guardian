@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root {
+  --navy-950: #060d1f;
+  --navy-900: #0a1428;
+  --navy-850: #0e1a35;
+  --navy-800: #122143;
+  --navy-700: #1b2f57;
+  --navy-600: #24407a;
+  --blue-500: #1e7ff0;
+  --blue-400: #4aa3ff;
+  --blue-300: #7cc0ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #060d1f;
+  color: #eaf2ff;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a1428;
+}
+::-webkit-scrollbar-thumb {
+  background: #24407a;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1e7ff0;
+}
+
+/* Gradient utilities */
+.bg-navy-gradient {
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(30, 127, 240, 0.12), transparent), linear-gradient(180deg, #060d1f 0%, #0a1428 100%);
+}
+
+.bg-grid {
+  background-image: linear-gradient(rgba(36, 64, 122, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(36, 64, 122, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glow-blue {
+  box-shadow: 0 0 0 1px rgba(30, 127, 240, 0.3), 0 0 24px rgba(30, 127, 240, 0.25);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #7cc0ff 0%, #1e7ff0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  70% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(0.9); opacity: 0; }
+}
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: rgba(239, 68, 68, 0.5);
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.35s ease-out both;
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(2000%); }
+}
+.scan-line {
+  animation: scan-line 2s linear infinite;
+}

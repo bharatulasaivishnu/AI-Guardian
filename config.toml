@@ -1,0 +1,5 @@
+[functions.ai-analyze]
+verify_jwt = true
+
+[functions.url-reputation]
+verify_jwt = true
